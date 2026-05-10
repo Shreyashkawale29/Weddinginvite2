@@ -311,6 +311,7 @@ body {
   );
   background-size:200% 100%;
   animation:shimmer 4s linear infinite;
+  font-family:'Cinzel',serif !important;
 }
 @keyframes shimmer {
   from{background-position:200% 0;}
@@ -330,7 +331,7 @@ body {
 
 .ev-badge {
   display:inline-block;
-  font-family:'Cinzel',serif;
+  font-family:'Cormorant Garamond',serif;
   font-size:clamp(0.55rem,2.2vw,0.7rem);
   font-weight:700;
   letter-spacing:0.35em;
@@ -345,37 +346,42 @@ body {
 }
 
 .ev-month {
-  font-family:'Cinzel',serif;
-  font-size:clamp(0.65rem,2.5vw,0.78rem);
-  letter-spacing:0.55em;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(0.75rem,2.8vw,0.85rem);
+  letter-spacing:0.5em;
   color:var(--text-lt);
   text-transform:uppercase;
-  margin-bottom:2px;
+  margin-bottom:4px;
 }
 
 .ev-date-row {
-  display:flex;
-  align-items:center; justify-content:center;
-  gap:clamp(8px,3vw,18px);
-  margin:4px 0;
-  flex-wrap:wrap;
+  display:grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items:center;
+  gap:15px;
+  margin:10px 0;
+  padding: 5px 0;
+  border-top: 1px solid rgba(201,150,58,0.15);
+  border-bottom: 1px solid rgba(201,150,58,0.15);
 }
 
 .ev-day {
-  font-family:'Cinzel',serif;
-  font-size:clamp(0.55rem,2vw,0.68rem);
-  letter-spacing:0.18em;
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(0.6rem,2.2vw,0.72rem);
+  letter-spacing:0.15em;
   color:var(--text-lt);
   text-transform:uppercase;
+  text-align: right;
 }
 
 .ev-num {
   font-family:'Cinzel',serif;
-  font-size:clamp(3rem,13vw,4.2rem);
+  font-size:clamp(1.4rem,9vw,1.8rem);
   font-weight:700;
   color:var(--crimson);
   line-height:1;
   text-shadow:2px 3px 12px rgba(123,21,48,0.25);
+  padding: 0 10px;
   animation:numGlow 3s ease-in-out infinite alternate;
 }
 @keyframes numGlow {
@@ -385,17 +391,18 @@ body {
 
 .ev-time {
   font-family:'Cormorant Garamond',serif;
-  font-style:italic;
-  font-size:clamp(0.82rem,3.2vw,1rem);
+  font-style:normal;
+  font-size:clamp(0.85rem,3.4vw,1.05rem);
   color:var(--text-dk);
+  text-align: left;
 }
 
 .ev-year {
-  font-family:'Cinzel',serif;
+  font-family:'Cormorant Garamond',serif;
   font-size:clamp(0.95rem,3.8vw,1.15rem);
-  letter-spacing:0.3em;
+  letter-spacing:0.4em;
   color:var(--gold-dk);
-  margin:2px 0 8px;
+  margin-top:6px;
 }
 
 .ev-at {
@@ -407,7 +414,7 @@ body {
 }
 
 .ev-venue-name {
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
   font-size:clamp(0.92rem,3.6vw,1.1rem);
   font-weight:700;
   color:var(--text-dk);
@@ -607,6 +614,11 @@ body {
       <!-- Inner arch -->
       <path d="M36 160 L36 84 Q36 30 140 28 Q244 30 244 84 L244 160"
             stroke="#c9963a" stroke-width="0.8" fill="none" opacity="0.5"/>
+            
+      <!-- Ganesha Image -->
+      <image href="genesha.png" x="78" y="12" width="120" height="150" />
+
+            
       <!-- Arch keystone -->
       <ellipse cx="140" cy="12" rx="10" ry="6" fill="none" stroke="#b8872a" stroke-width="1"/>
       <circle cx="140" cy="12" r="3" fill="#c9963a" opacity="0.8"/>
@@ -654,13 +666,14 @@ body {
 
   <!-- ===== NAMES ===== -->
   <div class="names-wrap">
-    <span class="name-bride">Nisha</span>
+    <span class="name-groom">Sagar</span>
+    
     <div class="ampersand-wrap">
       <div class="amp-line"></div>
       <span class="ampersand">&amp;</span>
       <div class="amp-line"></div>
     </div>
-    <span class="name-groom">Sagar</span>
+    <span class="name-bride">Nisha</span>
   </div>
 
   <p class="invite-sub">cordially invite you to join the<br>wedding celebrations</p>
@@ -678,13 +691,13 @@ body {
     <div class="event-card ev1">
       <div class="shimmer-layer"></div>
       <div class="ev-badge">Wedding Ceremony</div>
-      <div class="ev-month">M a y</div>
+      <div class="ev-month">May</div>
       <div class="ev-date-row">
         <span class="ev-day">Thursday</span>
         <span class="ev-num">14</span>
         <span class="ev-time">11:00 AM onwards</span>
       </div>
-      <div class="ev-year">2 0 2 6</div>
+      <div class="ev-year">2026</div>
       <div class="ev-at">at</div>
       <div class="ev-venue-name">Om Mangal Karyalaya</div>
       <div class="ev-venue-addr">Balapur Road, Akola</div>
@@ -694,13 +707,13 @@ body {
     <div class="event-card ev2">
       <div class="shimmer-layer"></div>
       <div class="ev-badge">Reception</div>
-      <div class="ev-month">M a y</div>
+      <div class="ev-month">May</div>
       <div class="ev-date-row">
         <span class="ev-day">Friday</span>
         <span class="ev-num">15</span>
         <span class="ev-time">7:00 PM onwards</span>
       </div>
-      <div class="ev-year">2 0 2 6</div>
+      <div class="ev-year">2026</div>
       <div class="ev-at">at</div>
       <div class="ev-venue-name">Renuka Mangalam</div>
       <div class="ev-venue-addr">Ram Nagar, Patur, Akola</div>
@@ -736,7 +749,7 @@ body {
       </svg>
       <div class="footer-mandala-line"></div>
     </div>
-    <p class="footer-msg">With love &amp; blessings &nbsp;✦&nbsp; Akola, Maharashtra</p>
+    <p class="footer-msg">✦ Your presence will make this occasion <br> more joyful & memorable ✦</p>
   </div>
 
  </div><!-- .card -->
