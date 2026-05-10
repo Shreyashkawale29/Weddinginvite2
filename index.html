@@ -914,8 +914,8 @@ const H=track.parentElement.offsetHeight;
 // We'll build two sets for seamless loop
 function buildProcession(){
   track.innerHTML='';
-  // Enhanced side-view procession with more drummers
-  const chars=[dholPlayer,shehnaiPlayer,dholPlayer,dancer,fruitBearer,brideGroom,flowerGirl,dholPlayer,shehnaiPlayer,dholPlayer];
+  // Clean procession: Shehnai -> Dancer -> Couple -> Fruit Bearer -> Flower Girl
+  const chars=[shehnaiPlayer,dancer,brideGroom,fruitBearer,flowerGirl,shehnaiPlayer,dancer,fruitBearer];
   const colors=['#7b1530','#c9963a','#4a0d1e','#8c6218','#7b1530','#c9963a','#4a0d1e'];
 
   // Two copies for seamless
@@ -924,7 +924,7 @@ function buildProcession(){
       const wrap=document.createElement('div');
       wrap.style.cssText=`
         position:relative;
-        margin-right:${22+Math.random()*10}px;
+        margin-right:${25+Math.random()*10}px;
         flex-shrink:0;
         display:flex;
         align-items:flex-end;
@@ -1043,33 +1043,6 @@ function dancer(c){
       <!-- Legs -->
       <line x1="15" y1="50" x2="10" y2="78" stroke="${c}" stroke-width="4" stroke-linecap="round" style="animation:legMove .6s ease-in-out infinite alternate; transform-origin:15px 50px;"/>
       <line x1="20" y1="50" x2="25" y2="78" stroke="${c}" stroke-width="4" stroke-linecap="round" style="animation:legMove .6s ease-in-out infinite alternate-reverse; transform-origin:20px 50px;"/>
-    </g>
-  `);
-}
-
-function dholPlayer(c){
-  const drumC = '#5c3a1a';
-  const sashC = c=='#c9963a'?'#7b1530':'#c9963a';
-  return makeSVG(55,100,`
-    <g transform="translate(5,15)">
-      <!-- Head Profile -->
-      <path d="M15 12 Q15 2 25 2 Q32 2 32 12 Q32 22 25 22 L20 22 L15 18 Z" fill="${c}"/>
-      <path d="M15 12 L11 14 L15 16" fill="${c}"/> <!-- Sharp Profile Nose -->
-      <!-- Turban -->
-      <ellipse cx="25" cy="4" rx="10" ry="4" fill="${sashC}"/>
-      <!-- Body -->
-      <rect x="18" y="22" width="12" height="28" rx="2" fill="${c}"/>
-      <!-- Dhol Side View -->
-      <g transform="translate(25,35)">
-        <ellipse cx="0" cy="0" rx="12" ry="18" fill="${drumC}"/>
-        <rect x="-12" y="-18" width="5" height="36" fill="#8b5e3c"/>
-      </g>
-      <!-- Arm with stick -->
-      <line x1="18" y1="30" x2="35" y2="20" stroke="${c}" stroke-width="3" stroke-linecap="round" style="animation:armSwing .4s infinite alternate; transform-origin:18px 30px;"/>
-      <line x1="35" y1="20" x2="45" y2="15" stroke="#6b3a10" stroke-width="2"/>
-      <!-- Legs -->
-      <line x1="22" y1="52" x2="16" y2="78" stroke="${c}" stroke-width="4.5" stroke-linecap="round" style="animation:legMove .8s ease-in-out infinite alternate; transform-origin:22px 52px;"/>
-      <line x1="28" y1="52" x2="34" y2="78" stroke="${c}" stroke-width="4.5" stroke-linecap="round" style="animation:legMove .8s ease-in-out infinite alternate-reverse; transform-origin:28px 52px;"/>
     </g>
   `);
 }
